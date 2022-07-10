@@ -1,0 +1,31 @@
+## RUNNING HAMISH
+## Compile and Run Sample
+navigate to hamish_v1.4 directory
+$ sudo ldconfig
+$ ./Allmake
+$ cp casefiles/1D/21step_abhi/com_hamish_21step_mavt_radn.h com_hamish.h
+$ cp casefiles/1D/21step_abhi/cont_21step_mavt_soret_dufour_radn.dat cont.dat
+$ cp casefiles/1D/21step_abhi/chem_21step.dat chem.dat
+$ cp casefiles/1D/21step_abhi/diff_21step.dat diff.dat
+$ cp casefiles/1D/21step_abhi/radn_21step.dat radn.dat
+$ cp casefiles/1D/21step_abhi/dmpi_radn_21step.dat dmpi0000000.dat
+$ touch *.f
+$ make
+$ ./Hamish 1 > hamish.res
+
+Note: May get 'The following floating-point exceptions are signalling: IEEE_INVALID_FLAG IEEE_DENORMAL' which is normal
+
+
+## Visualise Results
+navigate to hamish_v1.4 directory
+$ gnuplot ./gnufiles/flame.gnu
+
+
+## Restart
+find last modified dmpi file from previous run and denote with 'a_' prefix
+copy all results files into results directory
+copy last modified dmpi file as dmpi0000000.dat into hamish_v1.4 directory
+copy new cont.dat file into hamish_v1.4 directory
+rerun from touch *.f
+
+## USE AUTOMATE.SH

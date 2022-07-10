@@ -1,0 +1,84 @@
+*************************************************
+**                                             **
+**       HAMISH: Run control data file         **
+**                                             **
+*************************************************
+
+Global domain size (x,y,z) in metres
+ 1.0D-2    0.0D0    0.0D0
+
+Global cells (nx) initial, base/max levels, step switch (0=fixed, 1=adaptive)
+   2048     5    18     0
+
+Time step; start step, no of steps, step switch (0=fixed, 1=adaptive)
+ 1.0D-12    1   400000   1
+
+Steps between dumps, reports, stats, results, t-hist; dump flag, results flag
+ 400000    4000    4000    4000    4000    1    1
+
+Cold start switch (0=cold start, 1=restart), dump i/p flag (0/1=un/formatted)
+ 1    1
+
+Initial turbulence generator
+switch (0=off, 1=new, 2=inlet); random seed; turbulence parameters Rij, L
+ 0      -1      1.0D0  1.0D0  1.0D0  0.0D0  0.0D0  0.0D0  5.0D-4
+
+Initial mesh adaption switch, flame generator switch (0=off, 1=on) 
+ 0      0
+
+Default initial conditions
+pressure, temperature, velocity components u,v,w, level set
+ 1.0D5   3.0D2   2.06D0  0.0D0  0.0D0  0.0D0
+species mass fractions
+ 9
+ 1    1.4459951D-2
+ 2    2.06963410D-1
+ 3    0.0D0
+ 4    0.0D0
+ 5    0.0D0
+ 6    0.0D0
+ 7    0.0D0
+ 8    0.0D0
+ 9    7.78576638D-1
+
+Global outer boundary condition types
+one per line: x-left; x-right; y-left; y-right; z-left; z-right
+(1=periodic; 1a=inlet; 2b=outlet; 3c=wall; a,b,c denotes BC subtype)
+(five integer and five real parameters allowed for each)
+11    1    0    0    0    3    2.06D0   0.0D0    0.0D0    0.0D0    3.0D2
+                               1.28D0  -1.28D0   1.28D0   1.28D0   1.0D-3
+                          1    1.4459951D-2
+                          2    2.06963410D-1
+                          9    7.78576638D-1
+24    0    0    0    0    0    1.0D5    2.87D-1  1.0D-3   0.0D0    0.0D0
+1     0    0    0    0    0    0.0D0    0.0D0    0.0D0    0.0D0    0.0D0
+1     0    0    0    0    0    0.0D0    0.0D0    0.0D0    0.0D0    0.0D0
+1     0    0    0    0    0    0.0D0    0.0D0    0.0D0    0.0D0    0.0D0
+1     0    0    0    0    0    0.0D0    0.0D0    0.0D0    0.0D0    0.0D0
+
+Mesh refinement/derefinement criteria, interval, min/max levels
+ 1.0D-1   2.5D-2     10      5    18
+
+Mesh refinement scaling factors
+density, temperature, velocity components u,v,w, level set
+ 1.0D-1   1.0D-1   1.0D-1  1.0D-1  1.0D-1  1.0D-1
+species mass fractions
+1    5.0D-1
+2    5.0D-1
+3    5.0D-1
+4    5.0D-1
+5    5.0D-1
+6    5.0D-1
+7    5.0D-1
+8    5.0D-1
+9    5.0D-1
+
+Molecular transport control data
+switches: mix.av, Soret, Dufour; TDR max.mol.mass
+1     1     1     5.0D0
+
+Thermal radiation control data
+switch; reference temperature
+1     3.0D2
+
+End of file

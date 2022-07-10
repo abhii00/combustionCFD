@@ -1,0 +1,28 @@
+## INSTALLATION
+## Ubuntu
+connect to wifi
+modify Software & Updates to include "universe" repository
+
+
+## Required Packages
+$ sudo apt-get install gnuplot
+$ sudo apt-get install build-essential gfortran
+$ sudo ldconfig
+
+
+# OpenMPI
+download openmpi to docs directory
+navigate to docs directory
+$ gunzip -c openmpi-4.1.1.tar.gz | tar xf -
+$ cd openmpi-4.1.1
+$ ./configure --prefix=/usr/local
+$ sudo make all install
+
+
+## Extracting
+download hamish_v1.4.tar
+copy hamish_v1.4.tar to CFD directory
+navigate to CFD directory
+$ mkdir hamish_v1.4
+$ tar zxvf hamish_v1.4.tar --directory ./hamish_v1.4
+(last two steps are optional if using automate.sh)
